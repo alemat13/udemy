@@ -39,7 +39,7 @@ public class WorkDetailsServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         long id = Long.parseLong(request.getParameter("id"));
         Startup.main();
-        request.setAttribute("work", Catalog.listOfWork.get(id));
+        request.setAttribute("work", Catalog.getWorkById(id));
         RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/work-details.jsp");
         disp.forward(request, response);
     }

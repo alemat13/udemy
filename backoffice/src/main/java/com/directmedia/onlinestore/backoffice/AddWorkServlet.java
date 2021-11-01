@@ -50,16 +50,16 @@ public class AddWorkServlet extends HttpServlet {
                 w.setSummary(request.getParameter("summary"));
                 w.setMainArtist(new Artist(request.getParameter("artist")));
 
-                Long nbDoublon = Catalog.listOfWork.entrySet().stream().filter(wk
-                        -> wk.getValue().getRelease() == w.getRelease()
-                        && wk.getValue().getTitle().equals(w.getTitle())
-                        && wk.getValue().getMainArtist().getName().equals(w.getMainArtist().getName())
+                Long nbDoublon = Catalog.listOfWork.stream().filter(wk
+                        -> wk.getRelease() == w.getRelease()
+                        && wk.getTitle().equals(w.getTitle())
+                        && wk.getMainArtist().getName().equals(w.getMainArtist().getName())
                 ).count();
 
                 if (nbDoublon > 0) {
                     disp = request.getRequestDispatcher("/work-added-failure");
                 } else {
-                    Catalog.addWork(w);
+                    Catalog.listOfWork.add(w);
                     request.setAttribute("work_id", w.getId());
                     disp = request.getRequestDispatcher("/work-added-success");
                 }

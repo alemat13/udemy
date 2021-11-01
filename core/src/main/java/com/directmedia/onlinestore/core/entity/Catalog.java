@@ -1,15 +1,14 @@
 package com.directmedia.onlinestore.core.entity;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
 
 public class Catalog {
 
     /**
      *
      */
-    public static Map<Long, Work> listOfWork = new HashMap<Long, Work>();
-    public static void addWork(Work work) {
-        Catalog.listOfWork.put(work.getId(), work);
+    public static HashSet<Work> listOfWork = new HashSet<Work>();
+    public static Work getWorkById(Long id) {
+        return Catalog.listOfWork.stream().filter(w -> w.getId() == id).findFirst().get();
     }
 }

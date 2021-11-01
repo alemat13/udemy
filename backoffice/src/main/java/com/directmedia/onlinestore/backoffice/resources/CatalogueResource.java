@@ -8,7 +8,7 @@ package com.directmedia.onlinestore.backoffice.resources;
 import com.directmedia.onlinestore.core.Startup;
 import com.directmedia.onlinestore.core.entity.Catalog;
 import com.directmedia.onlinestore.core.entity.Work;
-import java.util.Collection;
+import java.util.Set;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -24,8 +24,8 @@ public class CatalogueResource {
     @Path("/liste")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Collection<Work> liste() {
+    public Set<Work> liste() {
         Startup.main();
-        return Catalog.listOfWork.values();
+        return Catalog.listOfWork;
     }
 }

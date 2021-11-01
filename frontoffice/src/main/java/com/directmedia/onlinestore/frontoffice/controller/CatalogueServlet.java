@@ -39,7 +39,7 @@ public class CatalogueServlet extends HttpServlet {
         Startup.main();
         out.println("<h1>Catalogue</h1>");
         out.println("<ul>");
-        for(Work w : Catalog.listOfWork.values()) {
+        for(Work w : Catalog.listOfWork) {
             out.println("<li><b>" + w.getMainArtist().getName() + 
                     "</b> - " + w.getTitle() +
                     " (" + w.getRelease() + ")" +

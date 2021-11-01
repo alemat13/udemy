@@ -10,7 +10,6 @@ import com.directmedia.onlinestore.core.entity.ShoppingCart;
 import com.directmedia.onlinestore.core.entity.Work;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.Long.parseLong;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,9 +43,9 @@ public class AddToCartServlet extends HttpServlet {
                 cart = new ShoppingCart();
                 session.setAttribute("cart", cart);
             }
-            Work w;
-            w = Catalog.listOfWork.get(parseLong(request.getParameter("id")));
-            cart.getItems().add(w);
+            Work work = Catalog.getWorkById(Long.parseLong(request.getParameter("id")));
+//            w = Catalog.listOfWork.get(parseLong(request.getParameter("id")));
+            cart.getItems().add(work);
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");

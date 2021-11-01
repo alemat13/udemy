@@ -20,7 +20,7 @@ public class Startup {
             sth.setSummary("The best song in the World");
             sth.setRelease(1971);
             sth.setTitle("Stairway to Heaven");
-            Catalog.addWork(sth);
+            Catalog.listOfWork.add(sth);
 
             Work sibly = new Work();
 //        sibly.setId(2);
@@ -29,7 +29,7 @@ public class Startup {
             sibly.setSummary("My favourite song of Led Zeppelin");
             sibly.setRelease(1970);
             sibly.setTitle("Since I've Been Loving You");
-            Catalog.addWork(sibly);
+            Catalog.listOfWork.add(sibly);
 
             Work ernie = new Work();
 //        ernie.setId(3);
@@ -38,10 +38,10 @@ public class Startup {
             ernie.setSummary("A very popular song from FFD");
             ernie.setRelease(2005);
             ernie.setTitle("Ernie");
-            Catalog.addWork(ernie);
+            Catalog.listOfWork.add(ernie);
 
-            Catalog.listOfWork.entrySet().forEach(w -> {
-                System.out.println(w.getValue().getTitle() + " (" + w.getValue().getRelease() + ")");
+            Catalog.listOfWork.forEach(w -> {
+                System.out.println(w.getTitle() + " (" + w.getRelease() + ")");
             });
         }
     }
