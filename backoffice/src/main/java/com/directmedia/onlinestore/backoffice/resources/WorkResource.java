@@ -63,7 +63,7 @@ public class WorkResource {
     }
     
     @PUT
-    @Path(".{id}")
+    @Path("/{id}")
     public Response update(
             @PathParam("id") long id,
             @FormParam("title") String title,
