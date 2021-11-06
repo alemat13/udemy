@@ -7,7 +7,7 @@
 $(document).ready(function () {
     $('#show-catalog').on("click", function () {
         $.ajax({
-            url: 'rest/work',
+            url: 'http://localhost:8080/services/rest/work',
             success: function (data) {
                 $('#catalog').empty();
                 data.forEach(function(w) {

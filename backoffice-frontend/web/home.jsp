@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,9 +16,8 @@
     </head>
     <body>
         <h1>OnlineStore - Gestion de la boutique</h1>
-        <c:if test="${not empty user}">Bonjour ${user} <a href="logout">(se déconnecter)</a></br></c:if>
-            <a href="add-work-form.html">Ajouter une oeuvre au catalogue</a><br>
-            <a href="#" id="show-catalog">Afficher le catalogue</a>
-            <div id="catalog"></div>
+        <a href="add-work-form.html">Ajouter une oeuvre au catalogue</a><br>
+        <a href="#" id="show-catalog">Afficher le catalogue</a>
+        <div id="catalog"></div>
     </body>
 </html>
